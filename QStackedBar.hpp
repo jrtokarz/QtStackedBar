@@ -15,6 +15,11 @@ class QStackedBar : public QWidget
     Q_OBJECT
 
 public:
+    struct Segment
+    {
+        int     value;
+        QColor  colour;
+    };
 
     QStackedBar(const unsigned int segments = 1);
 
@@ -32,7 +37,8 @@ protected:
     void paintEvent(QPaintEvent* ev) override;
 
 private:
-    std::vector<int> m_values{};
+    uint32_t    m_segmentCount{0};
+    std::vector<Segment> m_segments{};
 };
 
 
