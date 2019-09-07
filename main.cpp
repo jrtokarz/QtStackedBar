@@ -8,9 +8,11 @@
 int main(int argc, char* argv[])
 {
     QApplication app(argc, argv);
-    QStackedBar stackedBar;
+    QStackedBar stackedBar(4);
+
+    stackedBar.setValues({10, 20, 30, 40});
 
     stackedBar.show();
 
-    app.exec();
+    return app.exec();
 }
