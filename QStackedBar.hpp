@@ -15,9 +15,11 @@ class QStackedBar : public QWidget
     Q_OBJECT
 
 public:
-    void paintEvent(QPaintEvent* ev) override;
 
     void setValues(const std::initializer_list<int>& list);
+
+protected:
+    void paintEvent(QPaintEvent* ev) override;
 
 private:
     std::vector<int> m_values{};
