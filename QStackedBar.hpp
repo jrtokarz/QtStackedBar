@@ -6,6 +6,7 @@
 #define QTSTACKEDBAR_QSTACKEDBAR_HPP
 
 #include <QtCore>
+#include <QWidget>
 
 #include <initializer_list>
 
