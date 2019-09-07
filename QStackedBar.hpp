@@ -16,6 +16,16 @@ class QStackedBar : public QWidget
 
 public:
 
+    QStackedBar(const unsigned int segments = 1);
+
+    void addSegments(const unsigned int segments);
+
+    void setColor(const unsigned int segment, const QColor color);
+
+    void setMinimumValue(const int minVal);
+    void setMaximumValue(const int maxVal);
+
+    void setValue(const unsigned int segment, const int value);
     void setValues(const std::initializer_list<int>& list);
 
 protected:
