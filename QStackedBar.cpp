@@ -8,11 +8,10 @@
 #include <algorithm>
 #include "QStackedBar.hpp"
 
-QStackedBar::QStackedBar(const unsigned int segments):
-    m_segmentCount(segments)
+QStackedBar::QStackedBar(QWidget *parent, unsigned int segments):
+    QWidget(parent)
 {
-    m_segments.resize(segments);
-    assert(m_segments.size() == segments);
+    setSegments(segments);
 }
 
 void QStackedBar::setColor(const unsigned int segment, const QColor color)
