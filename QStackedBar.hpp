@@ -30,8 +30,13 @@ public:
     void setMinimumValue(const int minVal);
     void setMaximumValue(const int maxVal);
 
-    void setValue(const unsigned int segment, const int value);
     void setValues(const std::initializer_list<int>& list);
+
+public slots:
+    void setValue(const unsigned int segment, const int value);
+
+signals:
+    void valueChanged(const unsigned int segment, const int value);
 
 protected:
     void paintEvent(QPaintEvent* ev) override;
