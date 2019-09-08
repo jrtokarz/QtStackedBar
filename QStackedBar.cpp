@@ -14,23 +14,22 @@ QStackedBar::QStackedBar(QWidget *parent, unsigned int segments):
     setSegments(segments);
 }
 
-void QStackedBar::setColor(const unsigned int segment, const QColor color)
+void QStackedBar::setSegments(unsigned int segments)
 {
-    assert(segment < m_segmentCount);
-
-    m_segments[segment-1].colour = color;
+    m_segments.resize(segments);
+    assert(m_segments.size() == segments);
 }
 
-void QStackedBar::setValue(const unsigned int segment, const int value)
+void QStackedBar::setColor(const unsigned int segment, const QColor color)
 {
-    assert(segment < m_segmentCount);
+    assert(segment < m_segments.size());
 
-    m_segments[segment].value = value;
+    m_segments[segment].colour = color;
 }
 
 void QStackedBar::setValues(const std::initializer_list<int> &list)
 {
-    assert(list.size() == m_segmentCount);
+    assert(list.size() == m_segments.size());
 
     std::cout << "List size: " << list.size() << std::endl;
 
