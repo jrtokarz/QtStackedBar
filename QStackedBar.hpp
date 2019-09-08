@@ -42,7 +42,7 @@ protected:
     void paintEvent(QPaintEvent* ev) override;
 
 private:
-    uint32_t    m_segmentCount{0};
+    QBrush m_brush{};
     std::vector<Segment> m_segments{};
 };
 
