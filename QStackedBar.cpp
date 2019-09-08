@@ -47,6 +47,17 @@ void QStackedBar::setValues(const std::initializer_list<int> &list)
     }
 }
 
+void QStackedBar::setValue(const unsigned int segment, const int value)
+{
+    assert(segment < m_segments.size());
+
+    if (value != m_segments[segment].value)
+    {
+        m_segments[segment].value = value;
+        emit valueChanged(segment, value);
+    }
+}
+
 void QStackedBar::paintEvent(QPaintEvent* ev)
 {
     QPainter painter(this);
