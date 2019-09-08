@@ -53,11 +53,12 @@ void QStackedBar::paintEvent(QPaintEvent* ev)
     QWidget::paintEvent(ev);
     uint32_t xpos = 0;
 
+    painter.setPen(Qt::NoPen);
+
     for (auto segment : m_segments)
     {
-        auto color = QColor(segment.value, segment.value*2, segment.value*4);
-        painter.setBrush(QBrush(color));
-        painter.drawRect(xpos, 10, segment.value, 10);
+        painter.setBrush(QBrush(segment.colour));
+        painter.drawRect(xpos, 0, segment.value, this->height());
         xpos += segment.value;
     }
 }
