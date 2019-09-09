@@ -32,7 +32,10 @@ public:
 
     void setValues(const std::initializer_list<int>& list);
 
+    void mapToSegment(QObject* obj, unsigned int segment);
+
 public slots:
+    void setValue(const int value);
 
 signals:
     void valueChanged(const unsigned int segment, const int value);
@@ -42,6 +45,7 @@ protected:
 
 private:
     QBrush m_brush{};
+    std::map<QObject*, unsigned int> m_objToSegment{};
     std::vector<Segment> m_segments{};
 };
 
