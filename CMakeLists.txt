@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.14)
+cmake_minimum_required(VERSION 3.3)
 project(QtStackedBar)
 
 set(CMAKE_AUTOUIC ON)
