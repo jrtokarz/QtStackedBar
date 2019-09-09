@@ -47,7 +47,6 @@ void QStackedBar::setValues(const std::initializer_list<int> &list)
     }
 }
 
-void QStackedBar::setValue(const unsigned int segment, const int value)
 {
     assert(segment < m_segments.size());
 

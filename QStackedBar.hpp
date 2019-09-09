@@ -33,7 +33,6 @@ public:
     void setValues(const std::initializer_list<int>& list);
 
 public slots:
-    void setValue(const unsigned int segment, const int value);
 
 signals:
     void valueChanged(const unsigned int segment, const int value);
