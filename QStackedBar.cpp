@@ -8,7 +8,7 @@
 #include <algorithm>
 #include "QStackedBar.hpp"
 
-QStackedBar::QStackedBar(QWidget *parent, unsigned int segments):
+QStackedBar::QStackedBar(unsigned int segments, QWidget *parent):
     QWidget(parent)
 {
     setSegments(segments);

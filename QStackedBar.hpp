@@ -21,7 +21,7 @@ public:
         QColor  colour;
     };
 
-    QStackedBar(QWidget *parent = nullptr, unsigned int segments = 1);
+    QStackedBar(unsigned int segements, QWidget *parent = nullptr);
 
     void setSegments(unsigned int segments);
 
