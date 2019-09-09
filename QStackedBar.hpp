@@ -23,7 +23,7 @@ public:
 
     QStackedBar(QWidget *parent = nullptr, unsigned int segments = 1);
 
-    void addSegments(const unsigned int segments);
+    void setSegments(unsigned int segments);
 
     void setColor(const unsigned int segment, const QColor color);
 
