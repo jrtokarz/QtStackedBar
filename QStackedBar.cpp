@@ -59,7 +59,7 @@ void QStackedBar::setValue(const int value)
     if (value != m_segments[segment].value)
     {
         m_segments[segment].value = value;
-        emit valueChanged(segment, value);
+        emit repaint();
     }
 }
 
