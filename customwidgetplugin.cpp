@@ -64,7 +64,7 @@ bool QStackedBarPlugin::isInitialized() const
 
 QWidget *QStackedBarPlugin::createWidget(QWidget *parent)
 {
-    return new QStackedBar(parent);
+    return new QStackedBar(1, parent);
 }
 
 QString QStackedBarPlugin::name() const
