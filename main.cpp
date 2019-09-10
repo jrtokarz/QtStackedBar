@@ -25,9 +25,9 @@ int main(int argc, char* argv[])
         stackedBar->mapToSegment(sliders[i], i);
         QObject::connect(sliders[i], SIGNAL(valueChanged(int)), stackedBar, SLOT(setValue(int)));
         layout->addWidget(sliders[i]);
+		stackedBar->setValue(i, sliders[i]->value());
     }
 
-    stackedBar->setValues({10, 20, 30, 40});
     stackedBar->setMaximumHeight(20);
     stackedBar->setMaximumWidth(500);
 

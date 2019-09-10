@@ -47,10 +47,22 @@ void QStackedBar::setValues(const std::initializer_list<int> &list)
     }
 }
 
+void QStackedBar::setValue(unsigned int segment, int value)
+{
+	assert(segment < m_segments.size());
+
+	if (value != m_segments[segment].value)
+	{
+		m_segments[segment].value = value;
+		update();
+	}
+}
+
 void QStackedBar::mapToSegment(QObject* obj, unsigned int segment)
 {
     m_objToSegment[obj] = segment;
 }
+
 
 void QStackedBar::setValue(const int value)
 {
@@ -59,7 +71,7 @@ void QStackedBar::setValue(const int value)
     if (value != m_segments[segment].value)
     {
         m_segments[segment].value = value;
-        emit repaint();
+        update();
     }
 }
 

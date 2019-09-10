@@ -34,6 +34,8 @@ public:
 
     void mapToSegment(QObject* obj, unsigned int segment);
 
+	void setValue(unsigned int segment, int value);
+
 public slots:
     void setValue(const int value);
 
