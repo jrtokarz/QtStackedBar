@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.3)
-project(QtStackedBar)
+project(QStackedBar)
 
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -8,12 +8,18 @@ set(CMAKE_CXX_STANDARD 11)
 
 find_package(Qt4 REQUIRED QtCore QtGui QtDesigner)
 
-add_executable(QtStackedBar
-                main.cpp
-                QStackedBar.cpp
-                customwidgetplugin.cpp)
+add_library(${PROJECT_NAME} SHARED
+        QStackedBar.cpp
+        customwidgetplugin.cpp)
+        
+target_link_libraries(${PROJECT_NAME}
+    PUBLIC Qt4::QtCore
+    PUBLIC Qt4::QtGui
+    PUBLIC Qt4::QtDesigner)
 
-target_link_libraries(QtStackedBar
-    PRIVATE Qt4::QtCore
-    PRIVATE Qt4::QtGui
-    PRIVATE Qt4::QtDesigner)
+add_executable(stackedbar_test
+        main.cpp)
+
+target_link_libraries(stackedbar_test
+        PRIVATE ${PROJECT_NAME})
+
