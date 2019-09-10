@@ -100,13 +100,13 @@ bool QStackedBarPlugin::isContainer() const
 QString QStackedBarPlugin::domXml() const
 {
     return "<ui language=\"c++\">\n"
-           " <widget class=\"QStackedBar\" name=\"analogClock\">\n"
+           " <widget class=\"QStackedBar\" name=\"stackedBar\">\n"
            "  <property name=\"geometry\">\n"
            "   <rect>\n"
            "    <x>0</x>\n"
            "    <y>0</y>\n"
            "    <width>100</width>\n"
-           "    <height>100</height>\n"
+           "    <height>20</height>\n"
            "   </rect>\n"
            "  </property>\n"
            "  <property name=\"toolTip\" >\n"
@@ -121,7 +121,7 @@ QString QStackedBarPlugin::domXml() const
 
 QString QStackedBarPlugin::includeFile() const
 {
-    return "analogclock.h";
+    return "QStackedBar.h";
 }
 
 Q_EXPORT_PLUGIN2(customwidgetplugin, QStackedBarPlugin)
